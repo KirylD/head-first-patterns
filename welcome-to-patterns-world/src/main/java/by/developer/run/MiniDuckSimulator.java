@@ -1,7 +1,9 @@
 package by.developer.run;
 
+import by.developer.behavior.fly.impl.FlyRocketPowered;
 import by.developer.duck.Duck;
 import by.developer.duck.MallardDuck;
+import by.developer.duck.ModelDuck;
 
 public class MiniDuckSimulator {
 
@@ -9,8 +11,10 @@ public class MiniDuckSimulator {
         Duck mallardDuck = new MallardDuck();
         mallardDuck.performQuack();
         mallardDuck.performFly();
-        mallardDuck.swim();
-        mallardDuck.display();
 
+        Duck modelDuck = new ModelDuck();
+        modelDuck.performFly();
+        modelDuck.setFlyBehaviour(new FlyRocketPowered());
+        modelDuck.performFly();
     }
 }
