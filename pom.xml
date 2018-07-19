@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>welcome-to-patterns-world</module>
+        <module>strategy</module>
     </modules>
 
     <properties>
