@@ -15,7 +15,20 @@ public class Milk extends CondimentDecorator {
 
     @Override
     public float coast() {
-        return getBeverage().coast() + 1f;
+        float condimentCost;
+
+        Size size = getBeverage().getSize();
+        if (size.getMl() == Size.MINI.getMl()) {
+            condimentCost = 1;
+        } else if (size.getMl() == Size.MIDDLE.getMl()) {
+            condimentCost = 2;
+        } else if (size.getMl() == Size.MAX.getMl()) {
+            condimentCost = 3;
+        } else {
+            throw new UnsupportedOperationException("Unsupported Size.");
+        }
+
+        return getBeverage().coast() + condimentCost;
     }
 
     @Override

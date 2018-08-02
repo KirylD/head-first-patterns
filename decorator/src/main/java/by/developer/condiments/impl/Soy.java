@@ -20,6 +20,19 @@ public class Soy extends CondimentDecorator {
 
     @Override
     public float coast() {
-        return getBeverage().coast() + 0.5f;
+        float condimentCost;
+
+        Size size = getBeverage().getSize();
+        if (size.getMl() == Size.MINI.getMl()) {
+            condimentCost = 0.5f;
+        } else if (size.getMl() == Size.MIDDLE.getMl()) {
+            condimentCost = 1;
+        } else if (size.getMl() == Size.MAX.getMl()) {
+            condimentCost = 1.5f;
+        } else {
+            throw new UnsupportedOperationException("Unsupported Size.");
+        }
+
+        return getBeverage().coast() + condimentCost;
     }
 }

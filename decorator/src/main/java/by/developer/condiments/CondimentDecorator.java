@@ -20,4 +20,9 @@ public abstract class CondimentDecorator extends Beverage {
     protected Beverage getBeverage() {
         return beverage;
     }
+
+    @Override
+    public Size getSize() {
+        return beverage.getSize();
+    }
 }
